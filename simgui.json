@@ -1,0 +1,271 @@
+{
+  "HALProvider": {
+    "Addressable LEDs": {
+      "0": {
+        "columns": 34,
+        "order": 1,
+        "serpentine": true
+      },
+      "window": {
+        "visible": true
+      }
+    },
+    "Other Devices": {
+      "DutyCycleEncoder[5]": {
+        "header": {
+          "open": true
+        }
+      },
+      "SPARK MAX [13]": {
+        "header": {
+          "open": true
+        }
+      },
+      "navX-Sensor[0]": {
+        "header": {
+          "open": true
+        }
+      },
+      "window": {
+        "visible": false
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/Auto Chooser": "String Chooser",
+      "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/SendableChooser[0]": "String Chooser",
+      "/SmartDashboard/VisionSystemSim-main/Sim Field": "Field2d",
+      "/SmartDashboard/Visualizers/Climber": "Mechanism2d",
+      "/SmartDashboard/Widgets/Climb": "Mechanism2d"
+    },
+    "windows": {
+      "/FMSInfo": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/SmartDashboard/Auto Chooser": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/SmartDashboard/Fiel": {
+        "Robot": {
+          "arrowColor": [
+            1.0,
+            0.8035714030265808,
+            0.0,
+            255.0
+          ],
+          "arrowWeight": 8.0,
+          "color": [
+            0.05288053676486015,
+            0.5922619104385376,
+            0.0,
+            255.0
+          ],
+          "weight": 8.0
+        },
+        "bottom": 1476,
+        "height": 8.210550308227539,
+        "left": 150,
+        "right": 2961,
+        "swerve module-backLeft": {
+          "arrowColor": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 23,
+          "arrows": false,
+          "color": [
+            0.4523809552192688,
+            0.44834181666374207,
+            0.44834181666374207,
+            255.0
+          ],
+          "length": 0.15000000596046448,
+          "style": "Box/Image",
+          "weight": 2.0,
+          "width": 0.019999999552965164
+        },
+        "swerve module-backRight": {
+          "arrowColor": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 23,
+          "arrows": false,
+          "color": [
+            0.45098039507865906,
+            0.4470588266849518,
+            0.4470588266849518,
+            255.0
+          ],
+          "length": 0.15000000596046448,
+          "style": "Box/Image",
+          "weight": 2.0,
+          "width": 0.019999999552965164
+        },
+        "swerve module-frontLeft": {
+          "arrowColor": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 23,
+          "arrows": false,
+          "color": [
+            0.45098039507865906,
+            0.4470588266849518,
+            0.4470588266849518,
+            255.0
+          ],
+          "length": 0.15000000596046448,
+          "style": "Box/Image",
+          "weight": 2.0,
+          "width": 0.019999999552965164
+        },
+        "swerve module-frontRight": {
+          "arrowColor": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 23,
+          "arrows": false,
+          "color": [
+            0.45098039507865906,
+            0.4470588266849518,
+            0.4470588266849518,
+            255.0
+          ],
+          "length": 0.15000000596046448,
+          "style": "Box/Image",
+          "weight": 2.0,
+          "width": 0.019999999552965164
+        },
+        "top": 79,
+        "width": 16.541748046875
+      },
+      "/SmartDashboard/Field": {
+        "bottom": 1476,
+        "height": 8.210550308227539,
+        "left": 150,
+        "right": 2961,
+        "swerve module-backLeft": {
+          "arrowColor": [
+            1.0,
+            0.9464285373687744,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 12,
+          "style": "Track"
+        },
+        "swerve module-backRight": {
+          "arrowColor": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 12,
+          "color": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "style": "Track"
+        },
+        "swerve module-frontLeft": {
+          "arrowColor": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 12,
+          "style": "Track"
+        },
+        "swerve module-frontRight": {
+          "arrowColor": [
+            1.0,
+            0.9450980424880981,
+            0.0,
+            255.0
+          ],
+          "arrowSize": 12,
+          "style": "Track"
+        },
+        "top": 79,
+        "width": 16.541748046875,
+        "window": {
+          "name": "WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "visible": true
+        }
+      },
+      "/SmartDashboard/Visualizers/Climber": {
+        "window": {
+          "visible": true
+        }
+      }
+    }
+  },
+  "NetworkTables": {
+    "retained": {
+      ".schema": {
+        "open": true
+      },
+      "SmartDashboard": {
+        "open": true
+      }
+    }
+  },
+  "NetworkTables Info": {
+    "Clients": {
+      "open": true
+    },
+    "Connections": {
+      "open": true
+    },
+    "Server": {
+      "Publishers": {
+        "open": true
+      },
+      "Subscribers": {
+        "open": true
+      },
+      "open": true
+    },
+    "visible": true
+  },
+  "Plot": {
+    "Plot <0>": {
+      "plots": [
+        {
+          "backgroundColor": [
+            0.05999999865889549,
+            0.05999999865889549,
+            0.05999999865889549,
+            0.9399999976158142
+          ],
+          "crosshairs": true,
+          "height": 314
+        }
+      ],
+      "window": {
+        "visible": false
+      }
+    }
+  }
+}
