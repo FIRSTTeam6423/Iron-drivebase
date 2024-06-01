@@ -23,7 +23,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
 import frc.robot.subsystems.Drive.Gyro.GyroIO;
-import frc.robot.subsystems.Drive.Gyro.GyroSimIO;
+import frc.robot.subsystems.Drive.Gyro.GyroIOSim;
 import frc.robot.subsystems.Drive.Gyro.NavxIO;
 import frc.robot.subsystems.Drive.Module.ModuleIO;
 import frc.robot.subsystems.Drive.Module.NeoCoaxialModule;
@@ -104,7 +104,7 @@ public class Drive extends SubsystemBase {
             : new ModuleIOSim("backRight");
 
     swerveModules = List.of(frontLeft, frontRight, backLeft, backRight);
-    gyroIO = Robot.isReal() ? new NavxIO() : new GyroSimIO();
+    gyroIO = Robot.isReal() ? new NavxIO() : new GyroIOSim();
 
     // * odo
     zeroHeading();

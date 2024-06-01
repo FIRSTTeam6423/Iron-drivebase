@@ -32,11 +32,7 @@ public class RobotContainer {
   public RobotContainer() {
     //* init subsystems here
     drive = new Drive();
-    if (Robot.isReal()) {
-    
-    } else {
-
-    }
+    if (Robot.isReal()) {} else {}
 
     driveJoystick = new DriveJoystick(drive, driverController, MAX_LINEAR_SPEED, MAX_ANGULAR_SPEED);
 
