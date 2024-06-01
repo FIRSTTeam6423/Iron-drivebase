@@ -28,17 +28,17 @@ public class DriveJoystick {
         DriverStation.isAutonomous()
           ? 0
           :  -controller.joystickDeadbandOutput(XboxController.Axis.kLeftX.value) 
-            * ((controller.getLeftTriggerAxis() > controller.axisDeadband)
+            * ((controller.getLeftTriggerAxis() > controller.triggerDeadband)
               ? maxLinearSpeed * .35
               : maxLinearSpeed),
       () -> 
         DriverStation.isAutonomous()
           ? 0
           : -controller.joystickDeadbandOutput(XboxController.Axis.kLeftY.value)
-          * ((controller.getLeftTriggerAxis() > controller.axisDeadband)
+          * ((controller.getLeftTriggerAxis() > controller.triggerDeadband)
             ? maxLinearSpeed * .35
             : maxLinearSpeed),
-      () -> controller.flickStickOutput(XboxController.Axis.kRightX.value, XboxController.Axis.kRightY.value)
+      () -> controller.flickStickOutput(drive.getGyroHeading(), XboxController.Axis.kRightX.value, XboxController.Axis.kRightY.value)
       // () -> controller.joystickDeadbandOutput(XboxController.Axis.kRightX.value) * maxRotationSpeed 
     );
   }

@@ -143,7 +143,9 @@ public class Drive extends SubsystemBase {
    * @return {@link Command}
    */
   public Rotation2d getGyroHeading() {
-    return gyroIO.getGyroHeading();
+    return Robot.isReal()
+      ? gyroIO.getGyroHeading()
+      : simRotation;
   }
 
   /**
