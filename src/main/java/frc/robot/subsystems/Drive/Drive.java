@@ -262,6 +262,13 @@ public class Drive extends SubsystemBase {
         });
   }
 
+  /**
+   * Drives robot based on provided translation and rotation speeds
+   * @param vxMPS X translation speed
+   * @param vyMPS Y translation speed
+   * @param vomegaRPS Omega rotation speed
+   * @return {@link Command}
+   */
   public Command drive(DoubleSupplier vxMPS, DoubleSupplier vyMPS, DoubleSupplier vomegaRPS) {
     return runChassisSpeedFieldRelative(
       () ->
