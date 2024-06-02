@@ -43,8 +43,8 @@ public class DriveCommands {
           ? 0
           : controller.getJoystickAxis(XboxController.Axis.kRightX.value)
           * ((controller.getLeftTriggerAxis() > controller.triggerDeadband)
-            ? maxLinearSpeed * .35
-            : maxLinearSpeed)
+            ? maxRotationSpeed * .35
+            : maxRotationSpeed)
     );
   }
 
@@ -65,7 +65,6 @@ public class DriveCommands {
             ? maxLinearSpeed * .35
             : maxLinearSpeed),
       () -> controller.getJoystickCircularAngle(drive.getGyroHeading(), XboxController.Axis.kRightX.value, XboxController.Axis.kRightY.value)
-      // () -> controller.joystickDeadbandOutput(XboxController.Axis.kRightX.value) * maxRotationSpeed 
     );
   }
 }
