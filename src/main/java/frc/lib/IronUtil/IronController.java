@@ -1,3 +1,7 @@
+// Copyright (c) FIRST and other WPILib contributors.
+// Open Source Software; you can modify and/or share it under the terms of
+// the WPILib BSD license file in the root directory of this project.
+
 package frc.lib.IronUtil;
 
 import edu.wpi.first.math.MathUtil;
@@ -30,7 +34,7 @@ public class IronController extends CommandXboxController {
      * @param rawAxis 
      * @return double
      */
-    public double joystickDeadbandOutput(int rawAxis) {
+    public double getJoystickAxis(int rawAxis) {
         return MathUtil.applyDeadband(
             Math.abs(Math.pow(super.getRawAxis(rawAxis), 2)) * Math.signum(super.getRawAxis(rawAxis)),
             joystickDeadband
@@ -55,8 +59,8 @@ public class IronController extends CommandXboxController {
      * @return {@link Rotation2d}
      */
     public Rotation2d flickStickOutput(int yAxis, int xAxis) {
-        double y = joystickDeadbandOutput(yAxis);
-        double x = joystickDeadbandOutput(xAxis);
+        double y = getJoystickAxis(yAxis);
+        double x = getJoystickAxis(xAxis);
         return (y <= joystickDeadband && x <= joystickDeadband) ? new Rotation2d() : Rotation2d.fromRadians(Math.atan2(y, x));
     }
 
@@ -68,9 +72,9 @@ public class IronController extends CommandXboxController {
      * @param xAxis Joystick X
      * @return {@link Rotation2d}
      */
-    public Rotation2d flickStickOutput(Rotation2d defaultOut, int yAxis, int xAxis) {
-        double y = joystickDeadbandOutput(yAxis);
-        double x = joystickDeadbandOutput(xAxis);
+    public Rotation2d getJoystickCircularAngle(Rotation2d defaultOut, int yAxis, int xAxis) {
+        double y = getJoystickAxis(yAxis);
+        double x = getJoystickAxis(xAxis);
         return (y == 0.0 && x == 0.0) ? defaultOut : Rotation2d.fromRadians(Math.atan2(y, x));
     }
 
