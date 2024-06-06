@@ -2,16 +2,20 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package org.wmironpatriots.lib.IronUtil;
+package org.wmironpatriots.robot.Util;
 
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.Subsystem;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
-public class IronController extends CommandXboxController {
+public class CommandController extends CommandXboxController implements Subsystem {
+    
     public final double joystickDeadband, triggerDeadband;
 
     /**
@@ -21,7 +25,7 @@ public class IronController extends CommandXboxController {
      * @param joystickDeadband Joystick deadzone
      * @param triggerDeadband Trigger deadzone
      */
-    public IronController(int port, double joystickDeadband, double triggerDeadband) {
+    public CommandController(int port, double joystickDeadband, double triggerDeadband) {
         super(port);
 
         this.joystickDeadband = joystickDeadband;
@@ -81,11 +85,27 @@ public class IronController extends CommandXboxController {
     /**
      * Rumble Controller
      *
-     * @param rmb
-     * @param n
+     * @param rumbleType
+     * @param rumblePower
      * @return {@link Command}
      */
-    public Command rumbleController(GenericHID.RumbleType rmb, double n) {
-        return new InstantCommand(() -> super.getHID().setRumble(rmb, n));
+    public Command rumbleController(GenericHID.RumbleType rumbleType, double rumblePower) {
+        return new InstantCommand(() -> super.getHID().setRumble(rumbleType, rumblePower));
+    }
+
+    /**
+     * Rumble Controller for a certain amount of time
+     * 
+     * @param rumbleType
+     * @param power
+     * @param seconds
+     * @return {@link Command}
+     */
+    public Command rumbleController(GenericHID.RumbleType rumbleType, double power, double seconds) {
+        return Commands.sequence(
+            this.run( () -> super.getHID().setRumble(rumbleType, power)),
+            new WaitCommand(seconds),
+            this.run( () -> super.getHID().setRumble(GenericHID.RumbleType.kBothRumble, 0))
+        );
     }
 }

@@ -7,15 +7,16 @@ package org.wmironpatriots.robot.commands;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import org.wmironpatriots.lib.IronUtil.IronController;
+
+import org.wmironpatriots.robot.Util.CommandController;
 import org.wmironpatriots.robot.subsystems.Drive.Drive;
 
 public class DriveCommands {
   private final Drive drive;
-  private final IronController controller;
+  private final CommandController controller;
   private final double maxLinearSpeed, maxRotationSpeed;
 
-  public DriveCommands(Drive drive, IronController controller, double maxLinearSpeed, double maxRotationSpeed) {
+  public DriveCommands(Drive drive, CommandController controller, double maxLinearSpeed, double maxRotationSpeed) {
     this.drive = drive;
     this.controller = controller;
     this.maxLinearSpeed = maxLinearSpeed;

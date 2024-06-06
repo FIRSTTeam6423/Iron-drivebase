@@ -9,8 +9,9 @@ import static org.wmironpatriots.robot.Constants.DriveConstants.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
-import org.wmironpatriots.lib.IronUtil.IronController;
+
 import org.wmironpatriots.robot.Constants.ControllerConstants;
+import org.wmironpatriots.robot.Util.CommandController;
 import org.wmironpatriots.robot.commands.Auton;
 import org.wmironpatriots.robot.commands.DriveCommands;
 import org.wmironpatriots.robot.subsystems.Drive.Drive;
@@ -26,12 +27,12 @@ public class RobotContainer {
   public final SendableChooser<Command> autoSelector;
 
   // * ------ CONTROLLERS ------
-  public static IronController driverController = new IronController(
+  public static CommandController driverController = new CommandController(
     0, 
     ControllerConstants.DRIVER_DEADBAND, 
     ControllerConstants.DRIVER_TRIGGER_DEADBAND
   );
-  public static IronController operatorController = new IronController(
+  public static CommandController operatorController = new CommandController(
     1, 
     ControllerConstants.OPERATOR_DEADBAND, 
     ControllerConstants.OPERATOR_TRIGGER_DEADBAND

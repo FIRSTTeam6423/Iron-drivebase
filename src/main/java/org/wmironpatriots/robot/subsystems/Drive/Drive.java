@@ -25,7 +25,9 @@ import edu.wpi.first.wpilibj.smartdashboard.FieldObject2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
 import org.wmironpatriots.robot.Robot;
+import org.wmironpatriots.robot.RobotContainer;
 import org.wmironpatriots.robot.subsystems.Drive.Gyro.GyroIO;
 import org.wmironpatriots.robot.subsystems.Drive.Gyro.GyroIOSim;
 import org.wmironpatriots.robot.subsystems.Drive.Gyro.NavxIO;
@@ -226,7 +228,7 @@ public class Drive extends SubsystemBase {
    */
   public void resetOdometry(Pose2d pose) {
     odometry.resetPosition(
-        Robot.isReal() ? getGyroHeading() : simRotation, getModulePositions(), pose);
+      Robot.isReal() ? getGyroHeading() : simRotation, getModulePositions(), pose);
   }
 
   /**
