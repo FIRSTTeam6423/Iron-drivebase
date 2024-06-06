@@ -4,6 +4,7 @@ import java.lang.Cloneable;
 import java.lang.Override;
 import org.littletonrobotics.junction.LogTable;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
+import org.wmironpatriots.robot.subsystems.Drive.Gyro.GyroIO;
 
 public class GyroInputsAutoLogged extends GyroIO.GyroInputs implements LoggableInputs, Cloneable {
   @Override

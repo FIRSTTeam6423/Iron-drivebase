@@ -4,6 +4,7 @@ import java.lang.Cloneable;
 import java.lang.Override;
 import org.littletonrobotics.junction.LogTable;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
+import org.wmironpatriots.robot.subsystems.Drive.Module.ModuleIO;
 
 public class ModuleInputsAutoLogged extends ModuleIO.ModuleInputs implements LoggableInputs, Cloneable {
   @Override
